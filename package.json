@@ -1,0 +1,24 @@
+{
+  "name": "Grat-Bot",
+  "version": "1.0.0",
+  "description": "Bot für den schmalen Grat",
+  "main": "bot.js",
+  "dependencies": {
+    "discord.js": "^11.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FZoffel/Grat-Bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FZoffel/Grat-Bot/issues"
+  },
+  "homepage": "https://github.com/FZoffel/Grat-Bot#readme"
+}
