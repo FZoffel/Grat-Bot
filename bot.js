@@ -1,15 +1,15 @@
-const Discord = require("discord.js");
+const Discord = require(`discord.js`);
 const client = new Discord.Client();
-const fs = require("fs");
+const fs = require(`fs`);
 
-const config = require("./config.json");
+const config = require(`./config.json`);
 
 // This loop reads the /events/ folder and attaches each event file to the appropriate event.
-fs.readdir("./events/", (err, files) => {
+fs.readdir(`./events/`, (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
     let eventFunction = require(`./events/${file}`);
-    let eventName = file.split(".")[0];
+    let eventName = file.split(`.`)[0];
     client.on(eventName, (...args) => eventFunction.run(client, ...args));
   });
 });
@@ -21,19 +21,6 @@ client.on("message", message => {
 // Argument definition
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
-
-// Guten morgen Blödsinn
-  if (message.content.startsWith("guten morgen")) {
-	  message.channel.send(`Guten morgen ${message.author.username}`);
-  }else
-  
-   if (message.content.startsWith("muten gorgen")) {
-	  message.channel.send(`Es heisst Guten Morgen ${message.author.username}`);
-  }else
-  
-   if (message.content.startsWith("guteb morgen")) {
-	  message.channel.send(`Guten morgen ${message.author.username}`);
-  };
 
 // command call
   try {
