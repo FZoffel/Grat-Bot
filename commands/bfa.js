@@ -7,5 +7,10 @@ exports.run = (client, message, args) => {
         var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((t % (1000 * 60)) / 1000);
         var countdown = days + " Tagen " + hours + " Stunden " + minutes + " Minuten und " + seconds + " Sekunden ";
-        message.channel.send(`Hallo ${message.author.username}, Battle for Azeroth startet in ${countdown} `).catch(console.error);
+	if (days == 0 && hours == 0 && minutes == 0 && seconds == 0 ) {
+	message.channel.send(`Es ist bereits live mein Kind, warum levelst du noch nicht?`);
+	} else
+	{
+        message.channel.send(`Battle for Azeroth startet in ${countdown} `).catch(console.error);
+	}
 }
