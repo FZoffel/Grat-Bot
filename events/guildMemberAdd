@@ -1,4 +1,5 @@
 exports.run = (client, member) => {
-  const defaultChannel = member.guild.channels.find(c=> c.permissionsFor(guild.me).has("SEND_MESSAGES"));
-  defaultChannel.send(`Welcome ${member.user} to this server.`).catch(console.error);
+  const feelsgreat = client.emojis.find("name", "feelsgreat");
+//  client.send_message(client.get_channel('273215258871463937'), "Uh jemand neues! Hallo ${member.user} Willkommen beim schmalen Grat und danke für deine Seele!" + feelsgreat).catch(console.error);
+  client.send_message(client.get_channel('463641289871720448'), "Uh jemand neues! Hallo ${member.user} Willkommen beim schmalen Grat und danke für deine Seele!" + feelsgreat).catch(console.error);
 }
