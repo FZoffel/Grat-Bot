@@ -1,14 +1,13 @@
 exports.run = (client) => {
   console.log(`Up and running on ${client.guilds.size} servers, for a total of ${client.users.size} users.`);
-setTimeout(function(){ // in leftToEight() milliseconds run this:
-        sendMessage(); // send the message once
+setTimeout(function(){ // in leftToMorning() milliseconds run this:
         var dayMillseconds = 1000 * 60 * 60 * 24;
         setInterval(function(){ // repeat this every 24 hours
             sendMessage();
         }, dayMillseconds)
-    }, leftToEight())
+    }, leftToMorning())
 
-function leftToEight(){
+function leftToMorning(){
     var d = new Date();
     return (-d + d.setHours(8,30,0,0));
 }
