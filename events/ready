@@ -9,13 +9,13 @@ setTimeout(function(){ // in leftToMorning() milliseconds run this:
 
 function leftToMorning(){
     var d = new Date();
-    return (-d + d.setHours(8,30,0,0));
+    return (-d + d.setHours(10,0,0,0));
 }
 
 function sendMessage(){
     var guild = client.guilds.get('273215258871463937');
     if(guild && guild.channels.get('273215258871463937')){
-        guild.channels.get('273215258871463937').send("Guteb Morgen");
+        guild.channels.get('273215258871463937').send("Guten Morgen");
     }
 
 }
