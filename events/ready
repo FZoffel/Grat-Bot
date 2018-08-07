@@ -45,8 +45,8 @@ function leftToWednesday(){
 
 function sendWednesdayMessage(){
     var guild = client.guilds.get('273215258871463937');
-    if(guild && guild.channels.get('463641289871720448')){
-        guild.channels.get('463641289871720448').send({files: ["/home/sst-fzo/Projects/Grat-Bot/pictures/wednesday.png"]});
+    if(guild && guild.channels.get('273215258871463937')){
+        guild.channels.get('273215258871463937').send({files: ["/home/sst-fzo/Projects/Grat-Bot/pictures/wednesday.png"]});
     }
 }
 
