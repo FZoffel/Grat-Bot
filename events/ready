@@ -1,10 +1,13 @@
 exports.run = (client) => {
   console.log(`Up and running on ${client.guilds.size} servers, for a total of ${client.users.size} users.`);
+const feelsgreat = client.emojis.find("name", "feelsgreat");
+
+//Morning greeting
 setTimeout(function(){ // in leftToMorning() milliseconds run this:
         var dayMillseconds = 1000 * 60 * 60 * 24;
         setInterval(function(){ // repeat this every 24 hours
             sendMessage();
-        }, dayMillseconds)
+        },  dayMillseconds)
     }, leftToMorning())
 
 function leftToMorning(){
@@ -18,6 +21,53 @@ function sendMessage(){
         guild.channels.get('273215258871463937').send("Guten Morgen");
     }
 
+}
+
+
+//Wednesday
+
+setTimeout(function(){ // in leftToWednesday() milliseconds run this:
+        var weekMillseconds = 1000 * 60 * 60 * 24 * 7;
+        sendWednesdayMessage();
+        setInterval(function(){ // repeat this every week
+            sendWednesdayMessage();
+        },  weekMillseconds)
+     },  leftToWednesday())
+
+function leftToWednesday(){
+     var d = new Date();
+     d.setDate(d.getDate() + (3 + 7 - d.getDay()) % 7)
+     d.setHours(10,05,0,0);
+     var now = new Date();
+     var diff = d - now;
+     return (diff);
+}
+
+function sendWednesdayMessage(){
+    var guild = client.guilds.get('273215258871463937');
+    if(guild && guild.channels.get('463641289871720448')){
+        guild.channels.get('463641289871720448').send({files: ["/home/sst-fzo/Projects/Grat-Bot/pictures/wednesday.png"]});
+    }
+}
+
+//BFA
+setTimeout(function(){ // in leftToBFA() milliseconds run this:
+            sendBFAMessage();
+    }, leftToBFA())
+
+
+function leftToBFA(){
+    var now = new Date().getTime();
+    var release = new Date("Aug 14, 2018 00:00:00").getTime();
+    var diff = release - now;
+    return (diff)
+}
+
+function sendBFAMessage(){
+    var guild = client.guilds.get('273215258871463937');
+    if(guild && guild.channels.get('273215258871463937')){
+        guild.channels.get('273215258871463937').send("BFA ist da, viel Spass beim Leveln" + feelsgreat);
+    }
 }
 
 }
