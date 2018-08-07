@@ -1,5 +1,6 @@
 exports.run = (client) => {
-  console.log(`Up and running on ${client.guilds.size} servers, for a total of ${client.users.size} users.`);
+  var time = new Date();
+  console.log("Up and running at " + time + " on " + client.guilds.size + " servers, for a total of " + client.users.size + " users.");
 const feelsgreat = client.emojis.find("name", "feelsgreat");
 
 //Morning greeting
@@ -16,9 +17,9 @@ function leftToMorning(){
 }
 
 function sendMessage(){
-    var guild = client.guilds.get('273215258871463937');
-    if(guild && guild.channels.get('273215258871463937')){
-        guild.channels.get('273215258871463937').send("Guten Morgen");
+    var guild = client.guilds.get("273215258871463937");
+    if(guild && guild.channels.get("273215258871463937")){
+        guild.channels.get("273215258871463937").send("Guten Morgen");
     }
 
 }
@@ -44,9 +45,9 @@ function leftToWednesday(){
 }
 
 function sendWednesdayMessage(){
-    var guild = client.guilds.get('273215258871463937');
-    if(guild && guild.channels.get('273215258871463937')){
-        guild.channels.get('273215258871463937').send({files: ["/home/sst-fzo/Projects/Grat-Bot/pictures/wednesday.png"]});
+    var guild = client.guilds.get("273215258871463937");
+    if(guild && guild.channels.get("273215258871463937")){
+        guild.channels.get("273215258871463937").send({files: ["/home/sst-fzo/Projects/Grat-Bot/pictures/wednesday.png"]});
     }
 }
 
@@ -64,9 +65,9 @@ function leftToBFA(){
 }
 
 function sendBFAMessage(){
-    var guild = client.guilds.get('273215258871463937');
-    if(guild && guild.channels.get('273215258871463937')){
-        guild.channels.get('273215258871463937').send("BFA ist da, viel Spass beim Leveln" + feelsgreat);
+    var guild = client.guilds.get("273215258871463937");
+    if(guild && guild.channels.get("273215258871463937")){
+        guild.channels.get("273215258871463937").send("BFA ist da, viel Spass beim Leveln" + feelsgreat);
     }
 }
 

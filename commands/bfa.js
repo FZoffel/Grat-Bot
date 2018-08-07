@@ -8,9 +8,9 @@ exports.run = (client, message, args) => {
         var seconds = Math.floor((t % (1000 * 60)) / 1000);
         var countdown = days + " Tagen " + hours + " Stunden " + minutes + " Minuten und " + seconds + " Sekunden ";
 	if (days == 0 && hours == 0 && minutes == 0 && seconds == 0 ) {
-	message.channel.send(`Es ist bereits live mein Kind, warum levelst du noch nicht?`);
+	message.channel.send("Es ist bereits live mein Kind, warum levelst du noch nicht?");
 	} else
 	{
-        message.channel.send(`Battle for Azeroth startet in ${countdown} `).catch(console.error);
+        message.channel.send("Battle for Azeroth startet in " + countdown ).catch(console.error);
 	}
 }
